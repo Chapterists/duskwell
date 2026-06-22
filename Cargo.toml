@@ -1,0 +1,51 @@
+[workspace]
+members = [
+    "crates/lore-gateway",
+    "crates/toolbelt-core",
+    "crates/toolbelt-preview",
+    "crates/toolbelt-repomap",
+    "crates/toolbelt-types",
+    "xtask",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/olliejudge/duskwell"
+
+[workspace.dependencies]
+# async runtime
+tokio = { version = "1", features = ["full"] }
+
+# web framework
+axum = { version = "0.7", features = ["macros"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "fs", "trace"] }
+
+# serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# error handling
+anyhow = "1"
+thiserror = "1"
+
+# logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# static file embedding
+include_dir = "0.7"
+
+# async traits
+async-trait = "0.1"
+
+# type generation
+ts-rs = { version = "10", features = ["serde-json-impl"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

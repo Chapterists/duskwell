@@ -1,0 +1,25 @@
+[package]
+name = "toolbelt-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "duskwell"
+path = "src/main.rs"
+
+[dependencies]
+toolbelt-types = { path = "../toolbelt-types" }
+lore-gateway = { path = "../lore-gateway" }
+axum.workspace = true
+tokio.workspace = true
+tower.workspace = true
+tower-http.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+include_dir.workspace = true
+mime_guess = "2"

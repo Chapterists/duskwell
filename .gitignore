@@ -1,0 +1,38 @@
+# --- Local agent / working files (not committed) ---
+# CLAUDE.md holds local working instructions (incl. issue-tracker workflow)
+# and is intentionally kept out of the public repo.
+CLAUDE.md
+.claude/
+*.local.md
+
+# --- Rust ---
+/target
+**/*.rs.bk
+Cargo.lock.orig
+
+# --- Node / web ---
+node_modules/
+web/dist/
+web/node_modules/
+.vite/
+*.tsbuildinfo
+
+# --- Generated / caches ---
+/preview-cache/
+*.duskwell-cache
+dist/
+build/
+
+# --- Env & secrets ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
